@@ -5,6 +5,7 @@ Created on Fri Aug 30 10:01:27 2024
 @author: 55231
 https://github.com/wsxqaza12/RAG_example/blob/master/RAG_example.ipynb
 https://medium.com/@cch.chichieh/rag%E5%AF%A6%E4%BD%9C%E6%95%99%E5%AD%B8-langchain-llama2-%E5%89%B5%E9%80%A0%E4%BD%A0%E7%9A%84%E5%80%8B%E4%BA%BAllm-d6838febf8c4
+
 """
 
 from langchain.document_loaders import PyMuPDFLoader
@@ -23,7 +24,7 @@ PDF_data = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=5)
 all_splits = text_splitter.split_documents(PDF_data)
 
-###### Embed and store the texts
+###### Embed and store the texts using HuggingFace
 ###### Supplying a persist_directory will store the embeddings on disk
 persist_directory = 'db'
 model_name = "sentence-transformers/all-MiniLM-L6-v2"
